@@ -4,7 +4,7 @@ const productId = params.get('id');// get 'id' parameter from URL
 
 // Check if 'id' parameter is not present in URL
 if (!productId) {
-    // Display an error message ((no product ID specified)
+    // Display an error message (no product ID specified)
     document.getElementById('error').textContent = "No product ID specified. Redirecting to home page...";
     // Redirect to the home page
     setTimeout(() => {
@@ -19,17 +19,33 @@ if (!productId) {
             return response.json();
         })
         .then(product => {
-
             const productDetails = document.getElementById('productDetails');
+
+            // Define the mapping of category IDs to image filenames
+            const categoryImages = {
+                1: 'beverages.jpg',
+                2: 'condiments.jpg',
+                3: 'confections.jpg',
+                4: 'dairy.jpg',
+                5: 'grains.jpg',
+                6: 'meat.jpg',
+                7: 'produce.jpg',
+                8: 'seafood.jpg'
+            };
+
+            // Determine the image filename based on the category ID
+            const imageFilename = categoryImages[product.categoryId] || 'default.jpg';
+
             // Populate with the product information
+            let intPrice = parseInt(product.unitPrice)
             productDetails.innerHTML = `
-                <p>ID: ${product.productId || 'N/A'}</p>
                 <p>Name: ${product.productName || 'N/A'}</p>
-                <p>Price: $${product.unitPrice || 'N/A'}</p>
+                <p>ID: ${product.productId || 'N/A'}</p>
+                <p>Price: $${intPrice.toFixed(2) || 'N/A'}</p>
                 <p>Products available: ${product.unitsInStock || 'N/A'}</p>
-                <p>Category ID: ${product.categoryId || 'N/A'}</p>
                 <p>Supplier: ${product.supplier || 'N/A'}</p>
-                <p>Discontinued ? ${product.discontinued || 'N/A'}</p>
+                <p>Discontinued? ${product.discontinued || 'N/A'}</p>
+                <img src="/images/${imageFilename}" alt="Category Image">
             `;
         })
         .catch(error => {

@@ -22,6 +22,9 @@ function displayProducts(products, filterParams) {
         return matches;
     });
 
+    // Sort the filtered products by product name
+    filteredProducts.sort((a, b) => a.productName.localeCompare(b.productName));
+
     console.log("Filtered Products:", filteredProducts);
 
     // If no products match filter criteria, display message
@@ -31,10 +34,11 @@ function displayProducts(products, filterParams) {
         // product details for each filtered product
         filteredProducts.forEach(product => {
             const div = document.createElement('div');
+            let intPrice = parseInt(product.unitPrice)
             div.innerHTML = `
-                <p>Product ID: ${product.productId}</p>
                 <p>Name: ${product.productName}</p>
-                <p>Price: $${product.unitPrice}</p>
+                <p>Product ID: ${product.productId}</p>
+                <p>Price: $${ intPrice.toFixed(2)}</p>
             `;
 
             // anchor tag for product details page
@@ -89,8 +93,6 @@ function grabUrlParams() {
             });
     }
 }
-
-
 
 // Event listener (changing the search type)
 document.getElementById('searchType').addEventListener('change', function() {
