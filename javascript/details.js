@@ -39,13 +39,17 @@ if (!productId) {
             // Populate with the product information
             let intPrice = parseInt(product.unitPrice)
             productDetails.innerHTML = `
+            <div>
                 <p>Name: ${product.productName || 'N/A'}</p>
                 <p>ID: ${product.productId || 'N/A'}</p>
                 <p>Price: $${intPrice.toFixed(2) || 'N/A'}</p>
                 <p>Products available: ${product.unitsInStock || 'N/A'}</p>
                 <p>Supplier: ${product.supplier || 'N/A'}</p>
                 <p>Discontinued? ${product.discontinued || 'N/A'}</p>
+            </div>
+            <div>
                 <img src="/images/${imageFilename}" alt="Category Image">
+            </div>
             `;
         })
         .catch(error => {

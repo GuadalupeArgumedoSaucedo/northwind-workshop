@@ -1,0 +1,23 @@
+/* CSS for product details layout */
+#productDetails {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+}
+
+#productDetails p {
+    margin-right: 20px; /* Adjust spacing between description and image */
+}
+
+#productDetails img {
+    max-width: 300px; /* Adjust maximum width of the image */
+    height: auto;
+}
+h1{
+    color:#33612f ;
+}
+
+
+
+

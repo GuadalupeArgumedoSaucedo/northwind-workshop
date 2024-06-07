@@ -1,0 +1,25 @@
+/* Styling the navbar background */
+.navbar {
+    background-color: #33612f; /* Green background color */
+    padding-top: 1px; /* Adjust top padding of navbar */
+    padding-bottom: 1px; /* Adjust bottom padding of navbar */
+}
+
+/* Styling the navbar links */
+.navbar-nav {
+    display: flex; /* Use flexbox */
+    justify-content: space-around; /* Distribute items evenly */
+    align-items: center; /* Align items vertically */
+    width: 100%; /* Full width */
+}
+
+.navbar-nav .nav-link {
+    color: white; /* White text color */
+    text-decoration: none; /* Remove underline */
+    padding: 0 10px; /* Add padding to each link */
+}
+
+.navbar-brand img {
+    width: 65px; /* Adjust the width of the logo */
+    height: auto; /* Maintain aspect ratio */
+}
