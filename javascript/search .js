@@ -31,34 +31,31 @@ function displayProducts(products, filterParams) {
     if (filteredProducts.length === 0) {
         productsDiv.innerHTML = "<p>No products match the filter criteria.</p>";
     } else {
+        // Clear previous contents
+        productsDiv.innerHTML = '';
+    
         // product details for each filtered product
         filteredProducts.forEach(product => {
             const div = document.createElement('div');
-            let intPrice = parseInt(product.unitPrice)
+            div.className = 'card mb-3';
+            div.style.width = '18rem';
+    
+            let intPrice = parseInt(product.unitPrice);
+    
             div.innerHTML = `
-            <div class="row row-cols-1 row-cols-md-2 g-4">
-            <div class="col">
-              <div class="card">
                 <div class="card-body">
-                  <h5>Name: ${product.productName}</h5>
-                  <p>Product ID: ${product.productId}</p>
-                  <p>Price: $${ intPrice.toFixed(2)}</p>
+                    <h5 class="card-title">${product.productName}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Product ID: ${product.productId}</h6>
+                    <p class="card-text">Price: $${intPrice.toFixed(2)}</p>
+                    <a href="details.html?id=${product.productId}" class="btn btn-secondary">See details</a>
                 </div>
-              </div>
-            </div>
-                      `;
-
-            // anchor tag for product details page
-            let anchor = document.createElement('a');
-            anchor.href = `details.html?id=${product.productId}`;
-            anchor.text = "See details";
-            anchor.style.marginTop = "10px";
-            div.appendChild(anchor);
-
+            `;
+    
             // Appends div to productsDiv
             productsDiv.appendChild(div);
         });
     }
+    
 }
 
 // grab URL parameters and fetch products

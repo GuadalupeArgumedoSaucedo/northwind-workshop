@@ -1,27 +1,23 @@
-/* Styling the navbar background */
+/* Navbar css */
 .navbar {
-    background-color: #33612f; /* Green background color */
-    padding-top: 1px; /* Adjust top padding of navbar */
-    padding-bottom: 1px; /* Adjust bottom padding of navbar */
+    background-color: #33612f;
+    padding-top: 1px;
+    padding-bottom: 1px;
 }
-
-/* Styling the navbar links */
 .navbar-nav {
-    display: flex; /* Use flexbox */
-    justify-content: space-around; /* Distribute items evenly */
-    align-items: center; /* Align items vertically */
-    width: 100%; /* Full width */
+    display: flex; 
+    justify-content: space-around; 
+    align-items: center; 
+    width: 100%; 
 }
-
 .navbar-nav .nav-link {
-    color: white; /* White text color */
-    text-decoration: none; /* Remove underline */
-    padding: 0 10px; /* Add padding to each link */
+    color: white; 
+    text-decoration: none; 
+    padding: 0 10px; 
 }
-
 .navbar-brand img {
-    width: 65px; /* Adjust the width of the logo */
-    height: auto; /* Maintain aspect ratio */
+    width: 65px; 
+    height: auto; 
 }
 
 /* Resetting default margin and padding */
@@ -29,40 +25,29 @@ html, body {
     margin: 0;
     padding: 0;
 }
-
-/* Container to position elements */
 .container {
     position: relative;
-    text-align: center; /* Center align the content */
+    text-align: center; 
 }
-
-/* Styling the heading */
 h1 {
-    color: #333; /* Dark gray color */
-    font-size: 24px; /* Adjust font size as needed */
+    color: #333; 
+    font-size: 24px; 
 }
-
-/* Styling the paragraph */
 p {
-    color: #666; /* Medium gray color */
-    font-size: 16px; /* Adjust font size as needed */
+    color: #666; 
+    font-size: 16px; 
 }
-
-/* Styling the link */
 .search-link {
-    text-decoration: none; /* Remove underline */
+    text-decoration: none; 
     position: absolute;
-    top: 20px; /* Adjust top position as needed */
-    left: 20px; /* Adjust left position as needed */
-    font-weight: bold; /* Make the text bold */
+    top: 20px; 
+    left: 20px; 
+    font-weight: bold; 
 }
-
-
-/* Styling the image */
 .img-fluid {
-    max-width: 65%; /* Set maximum width to 75% */
-    display: block; /* Make sure image doesn't overlap with other elements */
-    margin: 0 auto; /* Center align the image */
+    max-width: 65%; 
+    display: block; 
+    margin: 0 auto; 
     padding-top: 10px;
 }
 
